@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "Adrian Pearman",
   "license": "MIT",
+  "engines" : { "node": "8.6.0" },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run build\" \"npm run dev-server\"",
     "server": "live-server public/",
