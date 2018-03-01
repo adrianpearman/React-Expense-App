@@ -7,8 +7,8 @@ import AppRouter from './router/AppRouter'
 import configStore from './redux/store/configStore'
 import { addExpense } from './redux/actions/expenses'
 import { setTextFilter } from './redux/actions/filters'
-
 import getVisibleExpenses from './redux/selectors/expenses'
+
 // Styling
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
