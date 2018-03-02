@@ -1,5 +1,5 @@
 const path = require('path')
-publicPath = path.join(__dirname, 'public')
+publicPath = path.join(__dirname, 'public', 'dist')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = (env) => {
@@ -43,7 +43,8 @@ module.exports = (env) => {
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   devServer: {
     contentBase: publicPath,
-    historyApiFallback: true
+    historyApiFallback: true,
+    publicPath: '/dist/'
   }
  }
 }
