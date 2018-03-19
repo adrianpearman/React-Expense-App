@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import './firebase/firebase'
+
 // Components
 import AppRouter from './router/AppRouter'
 import configStore from './redux/store/configStore'
