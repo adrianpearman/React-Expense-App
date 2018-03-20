@@ -4,7 +4,7 @@ import ExpenseForm from './ExpenseForm'
 import { startAddExpense } from '../redux/actions/expenses'
 
 export class AddExpensePage extends Component{
-  onSubmit = (expense) => {
+  startAddExpense = (expense) => {
     // uses the redux store to move the data to the store
     // props.dispatch(addExpense(expense))
     this.props.startAddExpense(expense) // changed to be able to test the component. same functionality.
@@ -16,7 +16,7 @@ export class AddExpensePage extends Component{
       <div>
         <h1>Add Expense</h1>
         <ExpenseForm
-          onSubmit={this.onSubmit}
+          startAddExpense={this.startAddExpense}
         />
       </div>
     )

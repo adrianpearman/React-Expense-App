@@ -5,7 +5,7 @@ import { DateRangePicker } from 'react-dates'
 
 export class ExpenseListFilters extends Component {
   state = {
-    calenderFocused: null
+    calendarFocused: null
   }
 
   onDatesChange = ({ startDate, endDate }) => {
@@ -13,12 +13,15 @@ export class ExpenseListFilters extends Component {
     this.props.setEndDate(endDate)
   }
 
-  onFocusChange = (calenderFocused) => {
-    this.setState(() => ({ calenderFocused: calenderFocused }))
+  // onFocusChange = (calendarFocused) => {
+  //   this.setState(() => ({ calendarFocused }));
+  // }
+
+  onFocusChange = (calendarFocused) => {
+    this.setState(() => ({ calendarFocused: calendarFocused }))
   }
 
   onTextChange = (e) => {
-    e.preventDefault()
     this.props.setTextFilter(e.target.value)
   }
 
@@ -49,7 +52,7 @@ export class ExpenseListFilters extends Component {
           startDate = {this.props.filters.startDate}
           endDate={this.props.filters.endDate}
           onDatesChange={this.onDatesChange}
-          focusedInput={this.state.calenderFocused}
+          focusedInput={this.state.calendarFocused}
           onFocusChange={this.onFocusChange}
           numberOfMonths={1}
           showClearDates={true}
@@ -59,7 +62,6 @@ export class ExpenseListFilters extends Component {
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {
