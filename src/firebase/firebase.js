@@ -13,4 +13,8 @@ firebase.initializeApp(config);
 
 const database = firebase.database()
 
+console.log("NODE_ENV", process.env.NODE_ENV)
+
+console.log("API_KEY", process.env.APP_KEY)
+
 export { firebase, database as default }
