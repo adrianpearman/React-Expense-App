@@ -27,7 +27,6 @@
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.10",
-    "dot-env": "^0.0.1",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase": "^4.2.0",
