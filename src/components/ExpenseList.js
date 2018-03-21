@@ -32,8 +32,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(ExpenseList)
-
-
-{/* <p>Expense List</p>
-{props.expenses.length}
-{props.filters.text} */}

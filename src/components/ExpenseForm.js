@@ -61,7 +61,7 @@ class ExpenseForm extends Component{
       this.setState(() => ({ submitError: 'Please provide a description and amount'}))
     } else {
       this.setState(() => ({ submitError: ''}))
-      this.props.onSubmit({
+      this.props.startAddExpense({
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10)*100, //changes the value from a string a float value
         createdAt: this.state.createdAt.valueOf(),

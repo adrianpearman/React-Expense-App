@@ -7,7 +7,7 @@ import './firebase/firebase'
 // Components
 import AppRouter from './router/AppRouter'
 import configStore from './redux/store/configStore'
-import { addExpense } from './redux/actions/expenses'
+import { startSetExpenses } from './redux/actions/expenses'
 import { setTextFilter } from './redux/actions/filters'
 import getVisibleExpenses from './redux/selectors/expenses'
 
@@ -29,4 +29,8 @@ const App = (
   </Provider>
 )
 
-ReactDOM.render(App, document.getElementById('app'))
+ReactDOM.render(<p>Loading..</p>, document.getElementById('app'))
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(App, document.getElementById('app'))
+})
