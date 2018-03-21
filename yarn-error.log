@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test -- watch
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js cross-env
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.6/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/adrianpearman/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -59,6 +59,7 @@ npm manifest:
       "react-redux": "^5.0.7",
       "react-router-dom": "^4.2.2",
       "redux": "^3.7.2",
+      "redux-mock-store": "^1.5.1",
       "redux-thunk": "^2.2.0",
       "sass-loader": "^6.0.6",
       "style-loader": "^0.20.2",
@@ -4213,6 +4214,10 @@ Lockfile:
     version "4.4.0"
     resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
   
+  lodash.isplainobject@^4.0.6:
+    version "4.0.6"
+    resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  
   lodash.memoize@^4.1.2:
     version "4.1.2"
     resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -5745,6 +5750,12 @@ Lockfile:
     dependencies:
       balanced-match "^0.4.2"
   
+  redux-mock-store@^1.5.1:
+    version "1.5.1"
+    resolved "https://registry.yarnpkg.com/redux-mock-store/-/redux-mock-store-1.5.1.tgz#fca4335392e66605420b5559fe02fc5b8bb6d63c"
+    dependencies:
+      lodash.isplainobject "^4.0.6"
+  
   redux-thunk@^2.2.0:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
@@ -7242,17 +7253,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c jest --config=jest.config.json watch
-  Directory: /Users/adrianpearman/Documents/Coding/practice_code/udemy/React_Complete/App#2
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at emitTwo (events.js:125:13)
-      at ChildProcess.emit (events.js:213:7)
-      at maybeClose (internal/child_process.js:927:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+  Error: Command "cross-env" not found.
+      at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:116:14
+      at Promise (<anonymous>)
+      at F (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:23451:28)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:95:12
+      at runCommand (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87312:22)
+      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87412:14)
