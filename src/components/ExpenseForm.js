@@ -13,7 +13,7 @@ class ExpenseForm extends Component{
 
     this.state = {
         description: props.expense ? props.expense.description : '',
-        note: props.expense ? props.expense.note : '',
+        note: props.expense ? props.expense.note : ' ',
         amount: props.expense ? (props.expense.amount / 100).toString() : '',
         createdAt: props.expense ? moment(props.expense.createdAt) : moment() ,
         calendarFocused: false,
@@ -61,7 +61,7 @@ class ExpenseForm extends Component{
       this.setState(() => ({ submitError: 'Please provide a description and amount'}))
     } else {
       this.setState(() => ({ submitError: ''}))
-      this.props.startAddExpense({
+      this.props.onSubmit({
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10)*100, //changes the value from a string a float value
         createdAt: this.state.createdAt.valueOf(),
@@ -99,7 +99,7 @@ class ExpenseForm extends Component{
             placeholder='Leave a note for your expense (Optional)'
             onChange={this.onNoteChange}
           ></textarea>
-          <button>Add Expense</button>
+          <button>{this.props.buttonText}</button>
         </form>
       </div>
     )

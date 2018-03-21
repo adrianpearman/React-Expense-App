@@ -16,7 +16,8 @@ export class AddExpensePage extends Component{
       <div>
         <h1>Add Expense</h1>
         <ExpenseForm
-          startAddExpense={this.startAddExpense}
+          onSubmit={this.startAddExpense}
+          buttonText='Add Expense'
         />
       </div>
     )
