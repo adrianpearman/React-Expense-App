@@ -2,13 +2,13 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import './firebase/firebase'
+import { firebase } from './firebase/firebase'
 
 // Components
-import AppRouter from './router/AppRouter'
+import AppRouter, { history } from './router/AppRouter'
 import configStore from './redux/store/configStore'
 import { startSetExpenses } from './redux/actions/expenses'
-import { setTextFilter } from './redux/actions/filters'
+import { logIn, logOut } from './redux/actions/auth'
 import getVisibleExpenses from './redux/selectors/expenses'
 
 // Styling
@@ -22,6 +22,13 @@ const store = configStore();
 // const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
 // console.log(visibleExpenses);
 
+let hasRendered = false
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(App, document.getElementById('app'))
+    hasRendered = true
+  }
+}
 
 const App = (
   <Provider store={store}>
@@ -31,6 +38,18 @@ const App = (
 
 ReactDOM.render(<p>Loading..</p>, document.getElementById('app'))
 
-store.dispatch(startSetExpenses()).then(() => {
-  ReactDOM.render(App, document.getElementById('app'))
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    store.dispatch(logIn(user.uid))
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp()
+      if (history.location.pathname === '/') {
+        history.push('/dashboard')
+      }
+    })
+  } else {
+    store.dispatch(logOut())
+    renderApp()
+    history.push('/')
+  }
 })
