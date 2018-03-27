@@ -10,6 +10,7 @@ import configStore from './redux/store/configStore'
 import { startSetExpenses } from './redux/actions/expenses'
 import { logIn, logOut } from './redux/actions/auth'
 import getVisibleExpenses from './redux/selectors/expenses'
+import LoadingPage from './components/LoadingPage'
 
 // Styling
 import 'normalize.css/normalize.css'
@@ -36,7 +37,7 @@ const App = (
   </Provider>
 )
 
-ReactDOM.render(<p>Loading..</p>, document.getElementById('app'))
+ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {

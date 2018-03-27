@@ -1,0 +1,28 @@
+.button {
+  padding: $m-size;
+  background-color: $lightblue;
+  color: $white;
+  display: inline-block;
+  border-color: $white;
+  border-radius: 8px;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.button--link {
+  padding: $m-size;
+  color: $white;
+  background: none;
+  display: inline-block;
+  border-color: $white;
+  border-radius: 8px;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.button__remove{
+  @extend .button;
+  background: $darkred
+}

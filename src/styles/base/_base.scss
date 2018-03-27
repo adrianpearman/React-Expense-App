@@ -1,9 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+
 html{
-  // font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
   font-family: Helvetica, arial, san-serif;
+  font-size: $m-size;
+  color: $dark-grey;
+  line-height: 1.6;
 }
 
 .is-active{
